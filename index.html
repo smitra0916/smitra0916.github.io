@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sourasish Mitra | Senior E&I Automation Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables & Global Resets */
+        :root {
+            --primary-color: #00bcd4; /* Cyan/Teal */
+            --primary-light: #4cffff; 
+            --secondary-color: #bdbdbd; /* Light Gray for text */
+            --background-color: #0a0a0a; /* Deep Black background */
+            --card-background: #1c1c1c; /* Dark card background */
+            --shadow-dark: rgba(0, 0, 0, 0.6);
+            --font-family: 'Roboto', sans-serif;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Links */
+        header {
+            background: linear-gradient(135deg, #1c1c1c, #0a0a0a);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--primary-color);
+            box-shadow: 0 8px 16px var(--shadow-dark);
+        }
+
+        h1 {
+            color: var(--primary-light);
+            margin-bottom: 5px;
+            font-size: 3em;
+            letter-spacing: 1.5px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--primary-light);
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 40px 0;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 2em;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        /* Experience Timeline Card */
+        .experience-card {
+            background: var(--card-background);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px var(--shadow-dark);
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .experience-card h3 {
+            color: var(--primary-light);
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        
+        .experience-card strong {
+            color: var(--primary-color);
+        }
+        
+        /* Skills Grid Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-group h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 1px dashed var(--card-background);
+            padding-bottom: 5px;
+        }
+
+        /* Skill Bar Component */
+        .skill-bar-container {
+            margin-bottom: 15px;
+        }
+
+        .skill-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            background: var(--card-background);
+            border-radius: 5px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0097a7, var(--primary-color));
+            border-radius: 5px;
+            /* Simple CSS animation */
+            animation: fillBar 1.5s ease-out forwards;
+        }
+        
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card-detail {
+            background: var(--card-background);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--shadow-dark);
+        }
+
+        .project-card-detail h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .project-card-detail em {
+            color: var(--secondary-color);
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        
+        /* Education */
+        .education-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .education-list li {
+            background: var(--card-background);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SOURASISH MITRA</h1>
+        <p class="subtitle">Senior Executive E&I | Specializing in DCS, Instrumentation Commissioning & Process Automation</p>
+        <div class="contact-links">
+            <a href="mailto:mitrasourasish@gmail.com">mitrasourasish@gmail.com</a>
+            <a href="https://linkedin.com/in/sourasishmitra" target="_blank">LinkedIn</a>
+            <a href="https://smitra0916.github.io" target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="experience">
+            <h2>💼 Key Professional Experience</h2>
+            <div class="experience-card">
+                <h3>Senior Executive - Electrical & Instrumentation</h3>
+                <p><strong>Grasim Industries Limited (Paints Division)</strong> | Kharagpur, WB, India | June 2025 - Present</p>
+                <ul>
+                    <li>Spearheaded the commissioning and calibration of over 300 critical field instruments, ensuring process accuracy of 0.5% prior to production.</li>
+                    <li>Led the system integration and testing of the Distributed Control System (DCS) and PLC interfaces, validating 50+ crucial safety interlocks for a safe plant startup.</li>
+                    <li>Implemented standardized Lockout/Tagout (LOTO) protocols, resulting in zero safety violations during the pre-commissioning phase.</li>
+                    <li>Optimized batch cycle time by fine-tuning the DCS recipe logic, targeting a 5% reduction in standard production time post-commissioning.</li>
+                    <li>Developed and conducted hands-on training programs for new maintenance technicians on troubleshooting key instrumentation and VFDs.</li>
+                </ul>
+            </div>
+            
+            <div class="experience-card">
+                <h3>Research Intern</h3>
+                <p><strong>University of Calcutta</strong> | Kolkata, India | May 2024 - July 2024</p>
+                <ul>
+                    <li>Designed and implemented PWM control system using Verilog on Xilinx FPGA to regulate MOSFETs driving a pump for a cold collision experiment.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>🛠️ Technical Expertise</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-group">
+                    <h4>Automation & Control</h4>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">DCS (ABB 800xA) <span style="color:var(--primary-color);">Expert</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">PLC (Siemens TIA Portal) <span style="color:var(--primary-color);">Advanced</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">Instrumentation & Calibration <span style="color:var(--primary-color);">Expert</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">Ladder Logic / Structured Text <span style="color:var(--primary-color);">Advanced</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h4>Programming & Tools</h4>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">Python / C / C++ <span style="color:var(--primary-color);">Intermediate</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">Verilog / FPGA Design <span style="color:var(--primary-color);">Intermediate</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">CAD / MS Office <span style="color:var(--primary-color);">Proficient</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar-label">Soft Skills (Team Mgt, Problem Solving) <span style="color:var(--primary-color);">Excellent</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>🚀 Featured Projects & Publications</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card-detail">
+                    <h3>Real-Time Health Monitoring (IoT)</h3>
+                    <p>Implemented a sophisticated system integrating low-cost IoT with Bluetooth LE and Cloud through a Local Server to remotely monitor patients for cardiovascular diseases.</p>
+                    <em>Technology Used: Firebase, ESP8266 (NodeMCU), MX30100 sensor. Presented and Published at 32nd West Bengal State Science & Technology Congress.</em>
+                </div>
+                
+                <div class="project-card-detail">
+                    <h3>FPGA-Based Timing Sequence Generator</h3>
+                    <p>Development of a FPGA-Based Timing Sequence Generator with MOSFET-Driven Nanosecond Pulse Precision for Cold Collision Experiment.</p>
+                    <em>Published at the National Conference on Recent Trends in Science and Technology 2025.</em>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>🎓 Education & Achievements</h2>
+            <ul class="education-list">
+                <li>
+                    <strong>B.Tech</strong> (Electronics & Communication Engineering) - Jalpaiguri Government Engineering College (2025) | CGPA: 8.89
+                </li>
+                <li>
+                    <strong>Diploma</strong> (Electrical Engineering) - A.P.C. Ray Polytechnic (2022) | CGPA: 8.9
+                </li>
+                <li>
+                    <strong>Certification:</strong> Introduction to PLC and Industrial Automation (LinkedIn Learning); AUTOCAD TRAINING by L&T Construction.
+                </li>
+                <li>
+                    <strong>Achievement:</strong> Outstanding Paper Presentation 1st at 7th Regional Science & Technology Congress 2025. Achieved Highest SGPA 9.71 in 5th Semester of BTech.
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>
